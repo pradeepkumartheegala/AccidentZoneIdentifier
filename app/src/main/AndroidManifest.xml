@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginWelcome"></activity>
+        <activity android:name=".ActivityProneAreas"></activity>
+        <activity android:name=".LoginWelcome" />
         <activity android:name=".Dashboard" />
         <activity android:name=".Accident" />
         <activity android:name=".SignupActivity" />
