@@ -22,12 +22,14 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="148dp">
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView2"
@@ -46,7 +48,7 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView3"
