@@ -13,6 +13,7 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
     }
+    
     public void accidentBTN(View v){
         Intent b1= new Intent(this,Accident.class);
         startActivity(b1);
