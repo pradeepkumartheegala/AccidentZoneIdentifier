@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="59dp"
         android:layout_marginBottom="653dp"
+        android:onClick="create"
         android:text="Create an account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,4 +74,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </TableLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="80dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="15dp"
+        android:onClick="create"
+        android:text="Create"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

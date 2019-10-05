@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void signUpBTN(View v){
-        Intent b1= new Intent(this,Login_Activity.class);
+        Intent b1= new Intent(this,SignupActivity.class);
         startActivity(b1);
     }
 }
