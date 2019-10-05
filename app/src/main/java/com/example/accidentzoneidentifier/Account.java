@@ -18,6 +18,7 @@ public class Account extends AppCompatActivity {
         Intent b1= new Intent(this,Login_Activity.class);
         startActivity(b1);
     }
+    
     public void saveBTN(View v){
         Intent b1= new Intent(this,LoginWelcome.class);
         startActivity(b1);
