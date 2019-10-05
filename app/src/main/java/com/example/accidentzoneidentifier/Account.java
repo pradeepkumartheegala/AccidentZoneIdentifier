@@ -14,10 +14,7 @@ public class Account extends AppCompatActivity {
         setContentView(R.layout.activity_account);
     }
 
-    public void SetPassBTN(View v){
-        Intent b1= new Intent(this,Login_Activity.class);
-        startActivity(b1);
-    }
+
     public void saveBTN(View v){
         Intent b1= new Intent(this,LoginWelcome.class);
         startActivity(b1);
