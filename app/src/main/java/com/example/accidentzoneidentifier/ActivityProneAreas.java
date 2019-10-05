@@ -13,8 +13,8 @@ public class ActivityProneAreas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prone_areas);
     }
-    public void ReportBTN(View v){
-        Intent b1= new Intent(this,LoginWelcome.class);
+    public void RouteBTN(View v){
+        Intent b1= new Intent(this,Mapper.class);
         startActivity(b1);
     }
 }

@@ -6,151 +6,136 @@
     android:layout_height="match_parent"
     tools:context=".Account">
 
-    <TextView
-        android:id="@+id/nameAccount"
-        android:layout_width="0dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginEnd="54dp"
-        android:text="Name"
-        app:layout_constraintEnd_toStartOf="@+id/EditName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/password"
-        android:layout_width="77dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="28dp"
-        android:text="Password"
-        app:layout_constraintEnd_toStartOf="@+id/editPassword"
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="378dp"
+        android:layout_height="244dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameAccount" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/Email"
-        android:layout_width="62dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="28dp"
-        android:text="Email"
-        app:layout_constraintEnd_toStartOf="@+id/editEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/PhoneNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="62dp"
-        android:layout_marginEnd="30dp"
-        android:text="Phone"
-        app:layout_constraintEnd_toStartOf="@+id/editPhone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Email" />
+            <TextView
+                android:id="@+id/nameAccount"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Name" />
 
+            <EditText
+                android:id="@+id/EditName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter name"
+                android:inputType="textPersonName" />
+        </TableRow>
 
-    <TextView
-        android:id="@+id/Address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="24dp"
-        android:text="Address"
-        app:layout_constraintEnd_toStartOf="@+id/AddressEdit"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PhoneNo" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Password" />
+
+            <EditText
+                android:id="@+id/editPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Password"
+                android:inputType="textPersonName" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/Email"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Email" />
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Email"
+                android:inputType="textPersonName" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/PhoneNo"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Phone" />
+
+            <EditText
+                android:id="@+id/editPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Phone"
+                android:inputType="textPersonName" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/Address"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Address" />
+
+            <EditText
+                android:id="@+id/AddressEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Address"
+                android:inputType="textPersonName" />
+        </TableRow>
+
+    </TableLayout>
 
     <Button
         android:id="@+id/changePassword"
-        android:layout_width="193dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="157dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="128dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
         android:hint="Set Password"
         android:onClick="SetPassBTN"
-        app:layout_constraintBottom_toTopOf="@+id/editEmail"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="133dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="44dp"
         android:onClick="saveBTN"
         android:text="SaveButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AddressEdit" />
+        app:layout_constraintStart_toEndOf="@+id/changePassword"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
-    <EditText
-        android:id="@+id/EditName"
-        android:layout_width="207dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="57dp"
-        android:layout_marginEnd="41dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editPassword"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="41dp"
-        android:ems="10"
-        android:hint="Enter password "
-        android:inputType=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditName" />
-
-    <EditText
-        android:id="@+id/editEmail"
-        android:layout_width="207dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="41dp"
-        android:ems="10"
-        android:hint="Enter Email"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/changePassword" />
-
-    <EditText
-        android:id="@+id/editPhone"
-        android:layout_width="211dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="60dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editEmail" />
-
-    <EditText
-        android:id="@+id/AddressEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="56dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPhone" />
 </androidx.constraintlayout.widget.ConstraintLayout>
