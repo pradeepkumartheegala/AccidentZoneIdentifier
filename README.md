@@ -1,4 +1,12 @@
-# AccidentZoneIdentifier
+# Application Name: Accident Zone Identifier
+
+##Team Members
+- Pradeepkumar Theegala
+- Sai Kiran Doddapaneni
+- Sai Nikhil Pippara
+- Sunil Mundru
+- Koteswara Harshith Gudapati
+
 
 ## Sources
 
