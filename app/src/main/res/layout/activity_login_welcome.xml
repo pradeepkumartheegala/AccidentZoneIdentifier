@@ -10,11 +10,10 @@
         android:id="@+id/buttonAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="149dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="172dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="149dp"
+        android:onClick="AccountBTN"
         android:text="Account"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,37 +21,37 @@
         android:id="@+id/btnDashboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="149dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="155dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="149dp"
+        android:onClick="dashboardBTN"
         android:text="Dashboard"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAccount" />
+        app:layout_constraintStart_toEndOf="@+id/buttonAccount"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonProne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="115dp"
-        android:layout_marginTop="63dp"
+        android:layout_marginTop="102dp"
         android:layout_marginEnd="116dp"
+        android:layout_marginBottom="116dp"
+        android:onClick="proneBTN"
         android:text="Accident Prone Area"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLogout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDashboard" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonAccount" />
 
     <Button
         android:id="@+id/buttonLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="290dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginEnd="161dp"
+        android:onClick="logoutBTN"
         android:text="Logout"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonProne" />
+        tools:layout_editor_absoluteY="463dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
