@@ -7,7 +7,7 @@
     tools:context=".Login_Activity">
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/loginEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="101dp"
@@ -20,7 +20,7 @@
         tools:layout_editor_absoluteX="48dp" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/loginPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="190dp"
@@ -33,7 +33,7 @@
         tools:layout_editor_absoluteX="53dp" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/loginBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="143dp"

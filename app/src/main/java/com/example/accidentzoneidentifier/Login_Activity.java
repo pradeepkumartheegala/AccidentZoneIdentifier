@@ -14,6 +14,7 @@ public class Login_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_login_);
     }
     public void LogWelcomeBTN(View v){
+
         Intent b1= new Intent(this,LoginWelcome.class);
         startActivity(b1);
     }

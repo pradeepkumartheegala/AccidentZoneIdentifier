@@ -7,7 +7,7 @@
     tools:context=".SignupActivity">
 
     <TextView
-        android:id="@+id/createAccountTV"
+        android:id="@+id/locationTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="59dp"
@@ -26,14 +26,14 @@
         android:layout_marginTop="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createAccountTV">
+        app:layout_constraintTop_toBottomOf="@+id/locationTV">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/nameTV"
+                android:id="@+id/streetTV"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Name" />
@@ -43,8 +43,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Enter name" />
+                android:hint="Enter name"
+                android:inputType="textPersonName" />
         </TableRow>
 
         <TableRow
@@ -52,7 +52,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/passwordTV"
+                android:id="@+id/zipcodeTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="password" />
@@ -62,8 +62,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Set password" />
+                android:hint="Set password"
+                android:inputType="textPersonName" />
         </TableRow>
 
         <TableRow
@@ -71,7 +71,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/landmarkTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email" />
@@ -81,8 +81,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Enter EmailId" />
+                android:hint="Enter EmailId"
+                android:inputType="textPersonName" />
         </TableRow>
 
         <TableRow
@@ -100,8 +100,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Enter phone Number" />
+                android:hint="Enter phone Number"
+                android:inputType="textPersonName" />
         </TableRow>
 
 
@@ -111,13 +111,14 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="80dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="15dp"
+        android:id="@+id/RegisterBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="create"
         android:text="Create"
-        app:layout_constraintStart_toEndOf="@+id/createAccountTV"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
