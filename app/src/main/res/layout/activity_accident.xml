@@ -33,7 +33,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/streetET"
+        android:id="@+id/passwordET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -65,7 +65,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/landmarkET"
+        android:id="@+id/EmailET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"

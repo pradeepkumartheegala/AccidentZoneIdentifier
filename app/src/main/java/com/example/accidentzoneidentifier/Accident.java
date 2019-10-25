@@ -25,8 +25,8 @@ public class Accident extends AppCompatActivity {
         SharedPreferences.Editor ed = myData.edit();
         EditText location = findViewById(R.id.locationET);
         EditText zipCode = findViewById(R.id.zipcodeET);
-        EditText street = findViewById(R.id.streetET);
-        EditText landmark = findViewById(R.id.landmarkET);
+        EditText street = findViewById(R.id.passwordET);
+        EditText landmark = findViewById(R.id.EmailET);
         ed.putString("name", (location.getText().toString()));
         ed.putString("phNo",zipCode.getText().toString());
         ed.putString("address",street.getText().toString());
