@@ -23,7 +23,7 @@ public class Accident extends AppCompatActivity {
         startActivity(b1);
         SharedPreferences myData = getSharedPreferences("saveAccident", Context.MODE_PRIVATE);
         SharedPreferences.Editor ed = myData.edit();
-        EditText location = findViewById(R.id.locationET);
+        EditText location = findViewById(R.id.NameET);
         EditText zipCode = findViewById(R.id.zipcodeET);
         EditText street = findViewById(R.id.passwordET);
         EditText landmark = findViewById(R.id.EmailET);
