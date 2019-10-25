@@ -17,7 +17,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/locationET"
+        android:id="@+id/NameET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -25,7 +25,7 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/streetTV"
+        android:id="@+id/NameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="street"
@@ -33,7 +33,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/streetET"
+        android:id="@+id/passwordET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -41,7 +41,7 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/zipcodeTV"
+        android:id="@+id/passwordTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="zipcode"
@@ -57,7 +57,7 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/landmarkTV"
+        android:id="@+id/EmailTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="landmark"
@@ -65,7 +65,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/landmarkET"
+        android:id="@+id/EmailET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"

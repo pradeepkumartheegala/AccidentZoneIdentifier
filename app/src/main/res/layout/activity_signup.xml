@@ -33,13 +33,13 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/streetTV"
+                android:id="@+id/NameTV"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Name" />
 
             <EditText
-                android:id="@+id/locationET"
+                android:id="@+id/NameET"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -52,13 +52,13 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/zipcodeTV"
+                android:id="@+id/passwordTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="password" />
 
             <EditText
-                android:id="@+id/streetET"
+                android:id="@+id/passwordET"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -71,13 +71,13 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/landmarkTV"
+                android:id="@+id/EmailTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email" />
 
             <EditText
-                android:id="@+id/landmarkET"
+                android:id="@+id/EmailET"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -90,13 +90,13 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/phoneTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="phoneId" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/phoneET"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -104,10 +104,29 @@
                 android:inputType="textPersonName" />
         </TableRow>
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/AddressTV"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Address" />
+
+            <EditText
+                android:id="@+id/EditAddressTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Address"
+                android:inputType="text" />
+        </TableRow>
+
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="54dp" />
     </TableLayout>
 
     <Button
@@ -120,5 +139,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
 </androidx.constraintlayout.widget.ConstraintLayout>
