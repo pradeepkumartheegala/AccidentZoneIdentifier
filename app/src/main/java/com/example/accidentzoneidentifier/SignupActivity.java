@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -18,8 +19,7 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
     }
     public void create(View v){
-        Intent b1= new Intent(this,LoginWelcome.class);
-        startActivity(b1);
+
         SharedPreferences myData = getSharedPreferences("save",Context.MODE_PRIVATE);
         SharedPreferences.Editor ed = myData.edit();
         EditText nameET = findViewById(R.id.NameET);
@@ -33,6 +33,10 @@ public class SignupActivity extends AppCompatActivity {
         ed.putString("password",pwd.getText().toString());
         ed.putString("email",email.getText().toString());
         ed.commit();
+        Toast.makeText(getApplicationContext(),"Account Created",Toast.LENGTH_SHORT).show();
+        Intent b1= new Intent(this,Login_Activity.class);
+        startActivity(b1);
+
     }
 
 }
