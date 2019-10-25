@@ -25,7 +25,7 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/StreetTV"
+        android:id="@+id/NameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="street"
@@ -41,7 +41,7 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/zipTV"
+        android:id="@+id/passwordTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="zipcode"
@@ -57,7 +57,7 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/landmarkTV"
+        android:id="@+id/EmailTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="landmark"
