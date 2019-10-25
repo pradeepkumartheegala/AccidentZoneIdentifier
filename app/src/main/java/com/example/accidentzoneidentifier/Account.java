@@ -36,7 +36,13 @@ public class Account extends AppCompatActivity {
         addresset.setText(address);
 
 
+
     }
 
+    public void SaveAccount(View v) {
+        Intent b1 = new Intent(this, LoginWelcome.class);
+        startActivity(b1);
 
+
+    }
 }
