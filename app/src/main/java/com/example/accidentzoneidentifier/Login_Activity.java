@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class Login_Activity extends AppCompatActivity {
 
@@ -14,6 +15,8 @@ public class Login_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_login_);
     }
     public void LogWelcomeBTN(View v){
+
+
 
         Intent b1= new Intent(this,LoginWelcome.class);
         startActivity(b1);
