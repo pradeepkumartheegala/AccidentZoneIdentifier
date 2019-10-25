@@ -1,147 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".Accident">
 
     <TextView
-        android:id="@+id/createAccountTV"
+        android:id="@+id/locationTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="111dp"
-        android:layout_marginEnd="299dp"
-        android:layout_marginBottom="601dp"
         android:text="location"
         android:textColor="#0F0C0C"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/nameTV"
+    <EditText
+        android:id="@+id/NameET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="211dp"
-        android:layout_marginEnd="314dp"
-        android:layout_marginBottom="501dp"
+        android:ems="10"
+        android:hint="Enter Location"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/NameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="street"
         android:textColor="#0F0C0C"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/passwordET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Street"
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/passwordTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="291dp"
-        android:layout_marginEnd="301dp"
-        android:layout_marginBottom="421dp"
         android:text="zipcode"
         android:textColor="#0F0C0C"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="389dp"
-        android:layout_marginEnd="285dp"
-        android:layout_marginBottom="323dp"
-        android:text="landmark"
-        android:textColor="#0F0C0C"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/locationET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="99dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="587dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/streetET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="195dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="491dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/zipcodeET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="283dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="403dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:hint="Enter zipcode"
+        android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/landmarkET"
+    <TextView
+        android:id="@+id/EmailTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="376dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="310dp"
+        android:text="landmark"
+        android:textColor="#0F0C0C"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/EmailET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:hint="Enter landmark"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/reportBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="499dp"
-        android:layout_marginEnd="181dp"
-        android:layout_marginBottom="184dp"
         android:onClick="reportBTN"
-        android:text="report"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="report" />
+</LinearLayout>
