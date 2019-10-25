@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Account extends AppCompatActivity {
@@ -22,10 +24,19 @@ public class Account extends AppCompatActivity {
         String email = myData.getString("email", "");
         String phonenumber = myData.getString("phNo", "");
         String address = myData.getString("address", "");
+        EditText nameEt = findViewById(R.id.accountNameET);
+        nameEt.setText(name);
+        TextView pwdTV = findViewById(R.id.accountPwdTV);
+        pwdTV.setText(password);
+        EditText emailet = findViewById(R.id.accountEmailET);
+        emailet.setText(email);
+        EditText phoneET = findViewById(R.id.accountPhoneET);
+        phoneET.setText(phonenumber);
+        EditText addresset = findViewById(R.id.accountAddressET);
+        addresset.setText(address);
 
 
     }
-
 
 
 }
