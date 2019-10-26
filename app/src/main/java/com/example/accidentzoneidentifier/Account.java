@@ -42,6 +42,19 @@ public class Account extends AppCompatActivity {
     }
 
     public void SaveAccount(View v) {
+        SharedPreferences myData = getSharedPreferences("save", Context.MODE_PRIVATE);
+        SharedPreferences.Editor ed = myData.edit();
+        EditText nameET = findViewById(R.id.accountNameET);
+        TextView pwd = findViewById(R.id.accountPwdTV);
+        EditText phno = findViewById(R.id.accountPhoneET);
+        EditText address = findViewById(R.id.accountAddressET);
+        EditText email = findViewById(R.id.accountEmailET);
+        ed.putString("name", (nameET.getText().toString()));
+        ed.putString("phNo",phno.getText().toString());
+        ed.putString("address",address.getText().toString());
+        ed.putString("password",pwd.getText().toString());
+        ed.putString("email",email.getText().toString());
+        ed.commit();
         Intent b1 = new Intent(this, LoginWelcome.class);
         startActivity(b1);
 
