@@ -38,7 +38,7 @@ public class Account extends AppCompatActivity {
         EditText addresset = findViewById(R.id.accountAddressET);
         addresset.setText(address);
 
-        Button changepwd = findViewById(R.id.changePwdBTN);
+        Button changepwd = findViewById(R.id.changePasswordBTN);
         changepwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
