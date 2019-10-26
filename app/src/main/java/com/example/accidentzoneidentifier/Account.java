@@ -57,6 +57,7 @@ public class Account extends AppCompatActivity {
         ed.commit();
         Intent b1 = new Intent(this, LoginWelcome.class);
         startActivity(b1);
+        Toast.makeText(getApplicationContext(),"Updated",Toast.LENGTH_SHORT).show();
 
 
     }
