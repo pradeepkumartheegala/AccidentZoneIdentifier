@@ -17,6 +17,8 @@ public class Account extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+
+
         SharedPreferences myData = getSharedPreferences("save", Context.MODE_PRIVATE);
         SharedPreferences.Editor ed = myData.edit();
         String name = myData.getString("name", "");
@@ -36,7 +38,13 @@ public class Account extends AppCompatActivity {
         addresset.setText(address);
 
 
+
     }
 
+    public void SaveAccount(View v) {
+        Intent b1 = new Intent(this, LoginWelcome.class);
+        startActivity(b1);
 
+
+    }
 }
