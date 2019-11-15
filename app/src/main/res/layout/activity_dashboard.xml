@@ -14,7 +14,7 @@
         android:layout_marginTop="218dp"
         android:layout_marginEnd="64dp"
         android:text="Number of Reports"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintEnd_toStartOf="@+id/ReportsNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,13 +24,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
         android:layout_marginTop="60dp"
-        android:onClick="accidentBTN"
         android:text="Report Accident"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/ReportsNumber" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/ReportsNumber"
         android:layout_width="140dp"
         android:layout_height="31dp"
         android:layout_marginTop="216dp"
