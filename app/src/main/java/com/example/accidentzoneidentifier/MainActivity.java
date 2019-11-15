@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.parse.Parse;
-import com.parse.ParseInstallation;
 
 public class MainActivity extends AppCompatActivity {
 
