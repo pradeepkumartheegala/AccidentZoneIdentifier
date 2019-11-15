@@ -63,14 +63,16 @@ public class SignupActivity extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(SignupActivity.this, "Fields are empty try again", Toast.LENGTH_SHORT).show();
                             } else {
+                                //getting the values from the edittext to store the values
                                 String name = nameET.getText().toString();
                                 String password = pwd.getText().toString();
                                 String emailid = email.getText().toString();
                                 String phone = phno.getText().toString();
                                 String addr = address.getText().toString();
+                                //getting the user-id which is same as current user
                                 String user_id= mFirebaseAuth.getCurrentUser().getUid();
+                                //connecting the database reference
                                 databaseReference = FirebaseDatabase.getInstance().getReference().child("userdata").child(user_id);
-
                                 UserData userData = new UserData( name, emailid, password, addr, phone);
                                 nameET.setText("");
                                 pwd.setText("");
