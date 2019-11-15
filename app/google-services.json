@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "878305672118",
+    "firebase_url": "https://accidentzoneidentifier-e8ac2.firebaseio.com",
+    "project_id": "accidentzoneidentifier-e8ac2",
+    "storage_bucket": "accidentzoneidentifier-e8ac2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878305672118:android:c22c89802d4a762be19f17",
+        "android_client_info": {
+          "package_name": "com.example.accidentzoneidentifier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878305672118-2puh4piupnvdsgcelr62j2nlr07nu9tf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXdhkZJ_3NRNc5vuE6hDiZeAi9do9Ux-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878305672118-2puh4piupnvdsgcelr62j2nlr07nu9tf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
