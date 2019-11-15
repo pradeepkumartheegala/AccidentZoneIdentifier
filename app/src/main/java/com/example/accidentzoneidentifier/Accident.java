@@ -24,25 +24,35 @@ public class Accident extends AppCompatActivity {
         setContentView(R.layout.activity_accident);
         myref= FirebaseDatabase.getInstance().getReference("");
 
-         location = findViewById(R.id.LocationET);
-         zipCode = findViewById(R.id.zipcodeET);
-         street = findViewById(R.id.StreetET);
-         landmark = findViewById(R.id.LandET);
-         AccidentReportBTN.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 String loc=location.getText().toString();
-                 String zip=zipCode.getText().toString();
-                 String stre=street.getText().toString();
-                 String land=landmark.getText().toString();
+        location = findViewById(R.id.LocationET);
+        zipCode = findViewById(R.id.zipcodeET);
+        street = findViewById(R.id.StreetET);
+        landmark = findViewById(R.id.LandET);
+        AccidentReportBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String loc=location.getText().toString();
+                String zip=zipCode.getText().toString();
+                String stre=street.getText().toString();
+                String land=landmark.getText().toString();
+                if(!loc.isEmpty() && !zip.isEmpty() && !stre.isEmpty() && !land.isEmpty()){
+                    AccidentData acc=new AccidentData(loc,stre,zip,land);
+                    landmark.setText("");
+                    location.setText("");
+                    zipCode.setText("");
+                    street.setText("");
+                    myref.setValue(acc);
+
+
+                }
 
 
 
 
-                 Intent b1 = new Intent(Accident.this, LoginWelcome.class);
-                 startActivity(b1);
-             }
-         });
+                Intent b1 = new Intent(Accident.this, LoginWelcome.class);
+                startActivity(b1);
+            }
+        });
     }
 
     //    Once the user clicks the report then it navigates to users main page
