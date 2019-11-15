@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "878305672118-bk2pfbbshuacollrfefh4phutte4m6s6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.accidentzoneidentifier",
+            "certificate_hash": "654da3f0b093b6033f101dfa2a13fc2463635e6c"
+          }
+        },
+        {
           "client_id": "878305672118-2puh4piupnvdsgcelr62j2nlr07nu9tf.apps.googleusercontent.com",
           "client_type": 3
         }

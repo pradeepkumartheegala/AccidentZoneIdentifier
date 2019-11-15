@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".SignupActivity">
 
     <TextView
         android:id="@+id/locationTV"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="59dp"
-        android:layout_marginBottom="653dp"
+
+        android:gravity="center"
         android:onClick="create"
         android:text="Create an account"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,119 +23,81 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TableLayout
+    <TextView
+        android:id="@+id/NameTV"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="70dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locationTV">
+        android:layout_height="wrap_content"
+        android:text="Name" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/NameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter name"
+        android:inputType="textPersonName" />
 
-            <TextView
-                android:id="@+id/NameTV"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Name" />
+    <TextView
+        android:id="@+id/EmailTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email" />
 
-            <EditText
-                android:id="@+id/NameET"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter name"
-                android:inputType="textPersonName" />
-        </TableRow>
+    <EditText
+        android:id="@+id/EmailET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter EmailId"
+        android:inputType="textPersonName" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/passwordTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="password" />
 
-            <TextView
-                android:id="@+id/passwordTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="password" />
+    <EditText
+        android:id="@+id/passwordET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Set password"
+        android:inputType="textPersonName" />
 
-            <EditText
-                android:id="@+id/passwordET"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Set password"
-                android:inputType="textPersonName" />
-        </TableRow>
+    <TextView
+        android:id="@+id/phoneTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="phoneId" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/phoneET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter phone Number"
+        android:inputType="textPersonName" />
 
-            <TextView
-                android:id="@+id/EmailTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Email" />
+    <TextView
+        android:id="@+id/AddressTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address" />
 
-            <EditText
-                android:id="@+id/EmailET"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter EmailId"
-                android:inputType="textPersonName" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/phoneTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="phoneId" />
-
-            <EditText
-                android:id="@+id/phoneET"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter phone Number"
-                android:inputType="textPersonName" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/AddressTV"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Address" />
-
-            <EditText
-                android:id="@+id/EditAddressTV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter Address"
-                android:inputType="text" />
-        </TableRow>
-
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="54dp" />
-    </TableLayout>
+    <EditText
+        android:id="@+id/EditAddressTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Address"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/RegisterBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:onClick="create"
         android:text="Create"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -141,4 +106,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.6" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
