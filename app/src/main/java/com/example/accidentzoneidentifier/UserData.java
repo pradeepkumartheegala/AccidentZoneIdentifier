@@ -4,6 +4,7 @@ package com.example.accidentzoneidentifier;
 public class UserData {
     private String name,email,password,address,phonenumber;
 
+
     public UserData() {
     }
 
@@ -13,6 +14,7 @@ public class UserData {
         this.password = password;
         this.address = address;
         this.phonenumber = phonenumber;
+
     }
 
     //getter methods helps to get the data from the firebase
@@ -35,5 +37,28 @@ public class UserData {
     public String getPhonenumber() {
         return phonenumber;
     }
+
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
 }
 
