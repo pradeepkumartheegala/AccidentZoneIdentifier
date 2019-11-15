@@ -45,8 +45,8 @@
         android:id="@+id/EditStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="258dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="264dp"
         android:ems="10"
         android:hint="Enter Start Point"
         android:inputType="textPersonName"
@@ -57,7 +57,7 @@
         android:id="@+id/editDest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="183dp"
+        android:layout_marginStart="156dp"
         android:layout_marginTop="343dp"
         android:layout_marginBottom="343dp"
         android:ems="10"
@@ -65,5 +65,6 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
