@@ -22,7 +22,7 @@ public class Accident extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accident);
-        myref= FirebaseDatabase.getInstance().getReference("");
+        myref= FirebaseDatabase.getInstance().getReference("Accidents");
 
         location = findViewById(R.id.LocationET);
         zipCode = findViewById(R.id.zipcodeET);
@@ -35,13 +35,17 @@ public class Accident extends AppCompatActivity {
                 String zip=zipCode.getText().toString();
                 String stre=street.getText().toString();
                 String land=landmark.getText().toString();
+
                 if(!loc.isEmpty() && !zip.isEmpty() && !stre.isEmpty() && !land.isEmpty()){
-                    AccidentData acc=new AccidentData(loc,stre,zip,land);
+                    String id=myref.push().getKey();
+                    AccidentData p=new AccidentData(id,loc,stre,zip,land);
+                    myref.child(id).setValue(p);
                     landmark.setText("");
                     location.setText("");
                     zipCode.setText("");
                     street.setText("");
-                    myref.setValue(acc);
+
+
 
 
                 }
