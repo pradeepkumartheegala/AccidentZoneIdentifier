@@ -5,11 +5,13 @@ public class AccidentData {
     private String street;
     private String zip;
     private String landmark;
+    private String id;
 
-    public AccidentData(String location, String street, String zip, String landmark) {
+    public AccidentData(String id,String location, String street, String zip, String landmark) {
         this.location = location;
         this.street = street;
         this.zip = zip;
+        this.id=id;
         this.landmark = landmark;
     }
 
@@ -43,5 +45,13 @@ public class AccidentData {
 
     public void setLandmark(String landmark) {
         this.landmark = landmark;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
