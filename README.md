@@ -1,7 +1,7 @@
 # Accident Zone Identifier
 An app to find accident zone in the routes being travelled.
 
-![Logo](https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.aanavandi.com%2Fblog%2Fwp-content%2Fuploads%2F2018%2F04%2Ftemporary4de3e669e03e327052011206.jpg&imgrefurl=https%3A%2F%2Fwww.aanavandi.com%2Fblog%2F275-accident-prone-areas-on-kerala-roads-study%2F&docid=i4qqRUsPhOjvKM&tbnid=-I2GmEfSruWWIM%3A&vet=10ahUKEwij19qH9-3lAhXuna0KHaUvBXoQMwhJKAYwBg..i&w=800&h=600&bih=663&biw=1366&q=accident%20prone%20areas&ved=0ahUKEwij19qH9-3lAhXuna0KHaUvBXoQMwhJKAYwBg&iact=mrc&uact=8)
+![Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Singapore_road_sign_-_Warning_-_Accident_area.svg/401px-Singapore_road_sign_-_Warning_-_Accident_area.svg.png)
 
 
 ## Problem statement:
