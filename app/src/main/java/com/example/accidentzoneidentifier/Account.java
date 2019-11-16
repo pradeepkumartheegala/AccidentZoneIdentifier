@@ -1,14 +1,11 @@
 package com.example.accidentzoneidentifier;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,13 +18,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Account extends AppCompatActivity {
-    EditText nameEt ;
-    TextView pwdTV ;
+    EditText nameEt;
+    TextView pwdTV;
     EditText emailet;
     EditText phoneET;
     EditText addresset;
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,21 +35,21 @@ public class Account extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         //getting the reference to account layout
-         nameEt = findViewById(R.id.accountNameET);
-         pwdTV = findViewById(R.id.accountPwdTV);
-         emailet = findViewById(R.id.accountEmailET);
-         phoneET = findViewById(R.id.accountPhoneET);
-         addresset = findViewById(R.id.accountAddressET);
-        String user_id= firebaseAuth.getCurrentUser().getUid();
+        nameEt = findViewById(R.id.accountNameET);
+        pwdTV = findViewById(R.id.accountPwdTV);
+        emailet = findViewById(R.id.accountEmailET);
+        phoneET = findViewById(R.id.accountPhoneET);
+        addresset = findViewById(R.id.accountAddressET);
+        String user_id = firebaseAuth.getCurrentUser().getUid();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("userdata").child(user_id);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String name =dataSnapshot.child("name").getValue().toString();
+                String name = dataSnapshot.child("name").getValue().toString();
                 String password = dataSnapshot.child("password").getValue().toString();
-                String email =  dataSnapshot.child("email").getValue().toString();
-                String phonenumber =  dataSnapshot.child("phonenumber").getValue().toString();
-                String address =  dataSnapshot.child("address").getValue().toString();
+                String email = dataSnapshot.child("email").getValue().toString();
+                String phonenumber = dataSnapshot.child("phonenumber").getValue().toString();
+                String address = dataSnapshot.child("address").getValue().toString();
                 nameEt.setText(name);
                 pwdTV.setText(password);
                 emailet.setText(email);
