@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -66,13 +67,16 @@ public class Account extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String user_id= firebaseAuth.getCurrentUser().getUid();
-                databaseReference = FirebaseDatabase.getInstance().getReference().child("userdata").child(user_id);
+                databaseReference = FirebaseDatabase.getInstance().getReference().child("userdata").child("1");
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         String name =dataSnapshot.child("name").getValue().toString();
+                        Log.d("value ","data "+name);
                         String password = dataSnapshot.child("password").getValue().toString();
                         String email =  dataSnapshot.child("email").getValue().toString();
+                        Log.d("value ","data "+email);
+
                         String phonenumber =  dataSnapshot.child("phonenumber").getValue().toString();
                         String address =  dataSnapshot.child("address").getValue().toString();
                         nameEt.setText(name);
