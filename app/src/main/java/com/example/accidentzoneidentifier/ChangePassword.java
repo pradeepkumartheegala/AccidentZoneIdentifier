@@ -21,18 +21,18 @@ public class ChangePassword extends AppCompatActivity {
         pwdBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences myData = getSharedPreferences("save", Context.MODE_PRIVATE);
-                SharedPreferences.Editor ed = myData.edit();
-                EditText currentPwd = findViewById(R.id.currentPwdET);
-                String pwd = myData.getString("password", "");
-                if (pwd.equals(currentPwd.getText().toString())) {
-                    EditText newPwd = findViewById(R.id.newPwdET);
-                    ed.putString("password", newPwd.getText().toString());
-                    Toast.makeText(getApplicationContext(), "Updated password", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "current password is wrong", Toast.LENGTH_SHORT).show();
-
-                }
+//                SharedPreferences myData = getSharedPreferences("save", Context.MODE_PRIVATE);
+//                SharedPreferences.Editor ed = myData.edit();
+//                EditText currentPwd = findViewById(R.id.currentPwdET);
+//                String pwd = myData.getString("password", "");
+//                if (pwd.equals(currentPwd.getText().toString())) {
+//                    EditText newPwd = findViewById(R.id.newPwdET);
+//                    ed.putString("password", newPwd.getText().toString());
+//                    Toast.makeText(getApplicationContext(), "Updated password", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    Toast.makeText(getApplicationContext(), "current password is wrong", Toast.LENGTH_SHORT).show();
+//
+//                }
             }
         });
 
