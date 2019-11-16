@@ -42,6 +42,28 @@ public class Account extends AppCompatActivity {
          emailet = findViewById(R.id.accountEmailET);
          phoneET = findViewById(R.id.accountPhoneET);
          addresset = findViewById(R.id.accountAddressET);
+        String user_id= firebaseAuth.getCurrentUser().getUid();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("userdata").child(user_id);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String name =dataSnapshot.child("name").getValue().toString();
+                String password = dataSnapshot.child("password").getValue().toString();
+                String email =  dataSnapshot.child("email").getValue().toString();
+                String phonenumber =  dataSnapshot.child("phonenumber").getValue().toString();
+                String address =  dataSnapshot.child("address").getValue().toString();
+                nameEt.setText(name);
+                pwdTV.setText(password);
+                emailet.setText(email);
+                phoneET.setText(phonenumber);
+                addresset.setText(address);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 //        SharedPreferences myData = getSharedPreferences("save", Context.MODE_PRIVATE);
 //        SharedPreferences.Editor ed = myData.edit();
@@ -65,28 +87,7 @@ public class Account extends AppCompatActivity {
         changepwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user_id= firebaseAuth.getCurrentUser().getUid();
-                databaseReference = FirebaseDatabase.getInstance().getReference().child("userdata").child(user_id);
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String name =dataSnapshot.child("name").getValue().toString();
-                        String password = dataSnapshot.child("password").getValue().toString();
-                        String email =  dataSnapshot.child("email").getValue().toString();
-                        String phonenumber =  dataSnapshot.child("phonenumber").getValue().toString();
-                        String address =  dataSnapshot.child("address").getValue().toString();
-                        nameEt.setText(name);
-                        pwdTV.setText(password);
-                        emailet.setText(email);
-                        phoneET.setText(phonenumber);
-                        addresset.setText(address);
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
                 Intent start = new Intent(Account.this, ChangePassword.class);
                 startActivity(start);
             }
