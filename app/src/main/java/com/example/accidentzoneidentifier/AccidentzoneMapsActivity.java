@@ -100,6 +100,7 @@ public class AccidentzoneMapsActivity extends FragmentActivity implements OnMapR
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
 
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -120,8 +121,7 @@ public class AccidentzoneMapsActivity extends FragmentActivity implements OnMapR
     }
     public void onClick(View v) {
 
-        switch (v.getId()) {
-            case R.id.B_SEARCH: {
+        if(v.getId()==R.id.B_SEARCH){
                 EditText tf_location = (EditText) findViewById(R.id.tf_location);
                 String location = tf_location.getText().toString();
                 List<Address> addressList = null;
@@ -152,7 +152,7 @@ public class AccidentzoneMapsActivity extends FragmentActivity implements OnMapR
 
 
             }
-            break;
+            //break;
 //            case R.id.B_hosital:
 //                mMap.clear();
 //                String hospital = "hospital";
@@ -202,13 +202,13 @@ public class AccidentzoneMapsActivity extends FragmentActivity implements OnMapR
 //                break;
 
         }
-    }
+
     private String getDirectionsUrl()
     {
         StringBuilder googleDirectionsUrl = new StringBuilder("https://maps.googleapis.com/maps/api/directions/json?");
         googleDirectionsUrl.append("origin="+latitude+","+longitude);
         googleDirectionsUrl.append("&destination="+end_latitude+","+end_longitude);
-        googleDirectionsUrl.append("&key="+"AIzaSyA4Z_S-lKrCOFiQvxBbCDRzteNToPpe4AA");
+        googleDirectionsUrl.append("&key="+"AIzaSyBydfr8tMoopaNoKqzBdA71pqbC7nx6rng");
 
         return googleDirectionsUrl.toString();
     }
@@ -219,7 +219,7 @@ public class AccidentzoneMapsActivity extends FragmentActivity implements OnMapR
         googlePlacesUrl.append("&radius=" + PROXIMITY_RADIUS);
         googlePlacesUrl.append("&type=" + nearbyPlace);
         googlePlacesUrl.append("&sensor=true");
-        googlePlacesUrl.append("&key=" + "AIzaSyA4Z_S-lKrCOFiQvxBbCDRzteNToPpe4AAk");
+        googlePlacesUrl.append("&key=" + "AIzaSyBydfr8tMoopaNoKqzBdA71pqbC7nx6rng");
         Log.d("getUrl", googlePlacesUrl.toString());
         return (googlePlacesUrl.toString());
     }
@@ -244,7 +244,7 @@ public class AccidentzoneMapsActivity extends FragmentActivity implements OnMapR
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
         currentLocationMarker = mMap.addMarker(markerOptions);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomBy(10));
+        mMap.animateCamera(CameraUpdateFactory.zoomBy(5));
 
 
     }
