@@ -23,6 +23,7 @@ public class Account extends AppCompatActivity {
     EditText emailet;
     EditText phoneET;
     EditText addresset;
+    Button Chgpasswordbtn,saveChangebtn;
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
 
@@ -81,13 +82,13 @@ public class Account extends AppCompatActivity {
 //        EditText addresset = findViewById(R.id.accountAddressET);
 //        addresset.setText(address);
 
-        Button changepwd = findViewById(R.id.changePasswordBTN);
-        changepwd.setOnClickListener(new View.OnClickListener() {
+        Chgpasswordbtn = findViewById(R.id.changePasswordBTN);
+        Chgpasswordbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent start = new Intent(Account.this, ChangePassword.class);
-                startActivity(start);
+                Intent b1 = new Intent(Account.this, ForgotPass.class);
+                startActivity(b1);
             }
         });
 
