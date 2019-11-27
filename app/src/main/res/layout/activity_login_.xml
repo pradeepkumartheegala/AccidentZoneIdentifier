@@ -40,10 +40,20 @@
         android:layout_marginTop="341dp"
         android:layout_marginEnd="180dp"
         android:layout_marginBottom="342dp"
-        android:onClick="LogWelcomeBTN"
         android:text="LOG IN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ForgotBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ForgotPassword?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.636" />
 </androidx.constraintlayout.widget.ConstraintLayout>

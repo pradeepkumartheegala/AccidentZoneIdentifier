@@ -24,7 +24,7 @@ public class Login_Activity extends AppCompatActivity {
     EditText userName;
     EditText userPwd;
     FirebaseAuth firebaseAuth;
-    Button loginBTN;
+    Button loginBTN,forgotBTN;
     private FirebaseAuth.AuthStateListener authStateListener;
 
     @Override
@@ -34,6 +34,7 @@ public class Login_Activity extends AppCompatActivity {
         userName = findViewById(R.id.loginEmail);
         userPwd = findViewById(R.id.loginPassword);
         loginBTN = findViewById(R.id.loginBTN);
+        forgotBTN=findViewById(R.id.ForgotBTN);
         firebaseAuth = FirebaseAuth.getInstance();
 
 
@@ -82,6 +83,14 @@ public class Login_Activity extends AppCompatActivity {
                 } else {
                     Toast.makeText(Login_Activity.this, "Error occured", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        forgotBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent b1 = new Intent(Login_Activity.this, ForgotPass.class);
+                startActivity(b1);
+
             }
         });
     }
