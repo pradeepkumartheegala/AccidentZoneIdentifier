@@ -1,58 +1,75 @@
 package com.example.accidentzoneidentifier;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class Accident extends AppCompatActivity {
-    EditText landmark,street,zipCode,location;
-    Button accidentReportBTN;
-    DatabaseReference myref;
+
+    EditText address, state, zipcode;
+    Button reportBTN;
+    FirebaseFirestore firebaseFirestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accident);
-        myref= FirebaseDatabase.getInstance().getReference("Accidents");
-        accidentReportBTN=findViewById(R.id.reportBTN);
-        location = findViewById(R.id.LocationET);
-        zipCode = findViewById(R.id.zipcodeET);
-        street = findViewById(R.id.StreetET);
-        landmark = findViewById(R.id.LandET);
-        accidentReportBTN.setOnClickListener(new View.OnClickListener() {
+
+        address = findViewById(R.id.LocationET);
+        state = findViewById(R.id.StreetET);
+        zipcode = findViewById(R.id.zipcodeET);
+        reportBTN = findViewById(R.id.reportBTN);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
+        reportBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String loc=location.getText().toString();
-                String zip=zipCode.getText().toString();
-                String stre=street.getText().toString();
-                String land=landmark.getText().toString();
-
-                if(!loc.isEmpty() && !zip.isEmpty() && !stre.isEmpty() && !land.isEmpty()){
-                    String id=myref.push().getKey();
-                    AccidentData p=new AccidentData(id,loc,stre,zip,land);
-                    myref.child(id).setValue(p);
-                    landmark.setText("");
-                    location.setText("");
-                    zipCode.setText("");
-                    street.setText("");
-
-                }
-
-                Intent b1 = new Intent(Accident.this, LoginWelcome.class);
-                startActivity(b1);
+                saveAccident(address.getText().toString(), state.getText().toString(), zipcode.getText().toString());
             }
         });
     }
 
-    //    Once the user clicks the report then it navigates to users main page
 
+    private void saveAccident(String addressStr, String stateStr, String zipStr) {
+        String id = UUID.randomUUID().toString();
+        Map<String, Object> doc = new HashMap<>();
+        doc.put("id", id);
+        doc.put("address", addressStr);
+        doc.put("state", stateStr);
+        doc.put("zipcode", zipStr);
+
+        firebaseFirestore.collection("Accidents").document(id).set(doc)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        Toast.makeText(Accident.this, "Accident Added..", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(Accident.this, LoginWelcome.class));
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                        Toast.makeText(Accident.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+    }
 }

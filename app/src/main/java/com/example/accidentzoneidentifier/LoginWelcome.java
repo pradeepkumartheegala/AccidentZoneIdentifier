@@ -41,4 +41,7 @@ public class LoginWelcome extends AppCompatActivity {
         Intent b1= new Intent(this,MainActivity.class);
         startActivity(b1);
     }
+    public void reportAccBTN(View v){
+        startActivity(new Intent(this, Accident.class));
+    }
 }

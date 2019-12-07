@@ -43,6 +43,15 @@
         android:text="Accident Prone Area" />
 
     <Button
+        android:id="@+id/buttonLogout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#74B1E2"
+        android:onClick="reportAccBTN"
+        android:text="report accident" />
+
+    <Button
         android:id="@+id/buttonLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

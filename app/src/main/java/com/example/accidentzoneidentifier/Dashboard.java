@@ -1,64 +1,65 @@
 package com.example.accidentzoneidentifier;
 
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Dashboard extends AppCompatActivity {
-    Button noreportsBTN;
-    TextView noReports;
-    DatabaseReference ref;
-    FirebaseAuth firebaseAuth;
-
+    List<AccidentData> accidentList = new ArrayList<>();
+    RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+    FirebaseFirestore firebaseFireStore;
+    AccidentAdapter accidentAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        firebaseAuth = FirebaseAuth.getInstance();
-        noreportsBTN = findViewById(R.id.ReportAccidentBtn);
 
-        noReports=findViewById(R.id.ReportsNumber);
-        noreportsBTN.setOnClickListener(new View.OnClickListener() {
+        firebaseFireStore = FirebaseFirestore.getInstance();
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        retrieveData();
+    }
+
+    private void retrieveData() {
+        firebaseFireStore.collection("Accidents").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
-            public void onClick(View view) {
-                ref= FirebaseDatabase.getInstance().getReference().child("Areas");
-                ref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String areaNumber=dataSnapshot.child("number").getValue().toString();
-                        noReports.setText(areaNumber);
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                accidentList.clear();
 
-                    }
+                for (DocumentSnapshot accidentInformation : task.getResult()) {
+                    accidentList.add(new AccidentData(accidentInformation.getString("id"), accidentInformation.getString("address"), accidentInformation.getString("state"), accidentInformation.getString("zipcode")));
+                }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                accidentAdapter = new AccidentAdapter(Dashboard.this, accidentList);
+                recyclerView.setAdapter(accidentAdapter);
 
-                    }
-                });
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
 
+                Toast.makeText(Dashboard.this, "Error", Toast.LENGTH_SHORT).show();
 
-
-
-
-
-                Intent b1= new Intent(Dashboard.this,Accident.class);
-                startActivity(b1);
             }
         });
     }
-
 }
