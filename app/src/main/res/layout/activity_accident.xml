@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_margin="20dp"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".Accident">
 
     <TextView
         android:id="@+id/locationTV"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="location"
         android:textColor="#0F0C0C"
@@ -18,7 +19,7 @@
 
     <EditText
         android:id="@+id/LocationET"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Enter Location"
@@ -26,7 +27,7 @@
 
     <TextView
         android:id="@+id/StreetTV"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="street"
         android:textColor="#0F0C0C"
@@ -34,7 +35,7 @@
 
     <EditText
         android:id="@+id/StreetET"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Enter Street"
@@ -42,7 +43,7 @@
 
     <TextView
         android:id="@+id/ZipTV"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="zipcode"
         android:textColor="#0F0C0C"
@@ -50,7 +51,7 @@
 
     <EditText
         android:id="@+id/zipcodeET"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Enter zipcode"
@@ -58,7 +59,7 @@
 
     <TextView
         android:id="@+id/LandTV"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="landmark"
         android:textColor="#0F0C0C"
@@ -66,7 +67,7 @@
 
     <EditText
         android:id="@+id/LandET"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Enter landmark"
@@ -74,7 +75,7 @@
 
     <Button
         android:id="@+id/reportBTN"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="reportBTN"
         android:text="report" />

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,7 +25,8 @@ public class Login_Activity extends AppCompatActivity {
     EditText userName;
     EditText userPwd;
     FirebaseAuth firebaseAuth;
-    Button loginBTN,forgotBTN;
+    Button loginBTN,createBTN;
+    TextView forgotBTN;
     private FirebaseAuth.AuthStateListener authStateListener;
 
     @Override
@@ -88,9 +90,15 @@ public class Login_Activity extends AppCompatActivity {
         forgotBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent b1 = new Intent(Login_Activity.this, ForgotPass.class);
-                startActivity(b1);
+                startActivity(new Intent(Login_Activity.this, ForgotPass.class));
 
+            }
+        });
+        createBTN=findViewById(R.id.createBTN);
+        createBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login_Activity.this,SignupActivity.class));
             }
         });
     }

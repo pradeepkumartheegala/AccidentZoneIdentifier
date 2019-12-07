@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
         Intent b1= new Intent(this,SignupActivity.class);
         startActivity(b1);
     }
-    public void RouteBTN(View v) {
-        Intent b1 = new Intent(this, AccidentzoneMapsActivity.class);
-        Log.d("map", "started");
-        startActivity(b1);
-    }
+//    public void RouteBTN(View v) {
+//        Intent b1 = new Intent(this, AccidentzoneMapsActivity.class);
+//        Log.d("map", "started");
+//        startActivity(b1);
+//    }
 
 
 }

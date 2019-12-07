@@ -31,7 +31,7 @@ public class Dashboard extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         noreportsBTN = findViewById(R.id.ReportAccidentBtn);
 
-        noReports=(TextView) findViewById(R.id.ReportsNumber);
+        noReports=findViewById(R.id.ReportsNumber);
         noreportsBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

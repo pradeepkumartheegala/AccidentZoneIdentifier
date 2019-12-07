@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Accident extends AppCompatActivity {
     EditText landmark,street,zipCode,location;
-    Button AccidentReportBTN;
+    Button accidentReportBTN;
     DatabaseReference myref;
 
     @Override
@@ -23,12 +23,12 @@ public class Accident extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accident);
         myref= FirebaseDatabase.getInstance().getReference("Accidents");
-
+        accidentReportBTN=findViewById(R.id.reportBTN);
         location = findViewById(R.id.LocationET);
         zipCode = findViewById(R.id.zipcodeET);
         street = findViewById(R.id.StreetET);
         landmark = findViewById(R.id.LandET);
-        AccidentReportBTN.setOnClickListener(new View.OnClickListener() {
+        accidentReportBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String loc=location.getText().toString();
@@ -45,13 +45,7 @@ public class Accident extends AppCompatActivity {
                     zipCode.setText("");
                     street.setText("");
 
-
-
-
                 }
-
-
-
 
                 Intent b1 = new Intent(Accident.this, LoginWelcome.class);
                 startActivity(b1);

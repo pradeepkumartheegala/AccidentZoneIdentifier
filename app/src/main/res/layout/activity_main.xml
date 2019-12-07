@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00DFB3B3"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/welcomeTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Welcome to Accident Zone Identifier"
+        android:gravity="center"
+        android:text="Welcome to Accident zone identifier"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

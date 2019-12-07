@@ -68,9 +68,9 @@ public class ActivityProneAreas extends AppCompatActivity {
             st.setText("");
             dt.setText("");
             Toast.makeText(getApplicationContext(),"ProneAreas Created", Toast.LENGTH_SHORT).show();
-            Intent b1 = new Intent(com.example.accidentzoneidentifier.ActivityProneAreas.this, Mapper.class);
-            Log.d("map", "started");
-            startActivity(b1);
+//            Intent b1 = new Intent(com.example.accidentzoneidentifier.ActivityProneAreas.this, AccidentzoneMapsActivity.class);
+//            Log.d("map", "started");
+//            startActivity(b1);
 
 
         } else {
