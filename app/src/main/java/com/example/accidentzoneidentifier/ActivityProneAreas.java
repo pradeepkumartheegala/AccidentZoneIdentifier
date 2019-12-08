@@ -1,21 +1,17 @@
 package com.example.accidentzoneidentifier;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-
-
 
 
 //    public void RouteBTN(View v){
@@ -37,15 +33,22 @@ public class ActivityProneAreas extends AppCompatActivity {
     DatabaseReference myRef;
     Button routebtn;
     EditText st, dt;
+    AutoCompleteTextView autoCompleteTextView;
+    AutoCompleteTextView autoCompleteTextView1;
 
+    {
+        Toast.makeText(getApplicationContext(), "enter valid areas", Toast.LENGTH_SHORT).show();
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prone_areas);
         myRef = FirebaseDatabase.getInstance().getReference("message");
-        st = (EditText) findViewById(R.id.EditStart);
-        dt = (EditText) findViewById(R.id.editDest);
+        st = findViewById(R.id.EditStart);
+        dt = findViewById(R.id.editDest);
 
         routebtn = findViewById(R.id.GetRouteBTN);
         routebtn.setOnClickListener(new View.OnClickListener() {
@@ -56,28 +59,26 @@ public class ActivityProneAreas extends AppCompatActivity {
             }
         });
 
+        autoCompleteTextView = findViewById(R.id.editDest);
+        autoCompleteTextView.setAdapter(new PlaceAutoSuggestAdapter(ActivityProneAreas.this, android.R.layout.simple_list_item_1));
+
+        autoCompleteTextView1 = findViewById(R.id.EditStart);
+        autoCompleteTextView1.setAdapter(new PlaceAutoSuggestAdapter(ActivityProneAreas.this, android.R.layout.simple_list_item_1));
+
     }
 
     public void RouteBTN() {
-        String startpt = st.getText().toString();
-        String destpt = dt.getText().toString();
-        if (!TextUtils.isEmpty(startpt) && !TextUtils.isEmpty(destpt)) {
-            String id = myRef.push().getKey();
-            ProneArea p = new ProneArea(id, startpt, destpt);
-            myRef.child(id).setValue(p);
-            st.setText("");
-            dt.setText("");
-            Toast.makeText(getApplicationContext(),"ProneAreas Created", Toast.LENGTH_SHORT).show();
-//            Intent b1 = new Intent(com.example.accidentzoneidentifier.ActivityProneAreas.this, AccidentzoneMapsActivity.class);
-//            Log.d("map", "started");
-//            startActivity(b1);
-
-
+        String startpt = autoCompleteTextView.getText().toString();
+        String destpt = autoCompleteTextView1.getText().toString();
+        if (startpt.isEmpty()) {
+            Toast.makeText(this, "Enter the starting point", Toast.LENGTH_SHORT).show();
+        } else if (destpt.isEmpty()) {
+            Toast.makeText(this, "Enter the ending point", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getApplicationContext(),"enter valid areas",Toast.LENGTH_SHORT).show();
-
-
+            Intent mapIntent = new Intent(this, MapsActivity.class);
+            mapIntent.putExtra("start", startpt);
+            mapIntent.putExtra("end", destpt);
+            startActivity(mapIntent);
         }
-
     }
 }

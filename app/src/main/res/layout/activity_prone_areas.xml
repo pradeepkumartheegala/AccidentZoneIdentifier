@@ -16,15 +16,17 @@
         android:text="Start"
         android:textSize="18sp" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/EditStart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Start Point"
+        android:completionThreshold="1"
+        android:completionHint="Enter start point"
         android:inputType="textPersonName"
         android:textSize="18sp" />
 
-    <TextView
+    <AutoCompleteTextView
         android:id="@+id/Destination"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,12 +34,14 @@
         android:text="Destination"
         android:textSize="18sp" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/editDest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Destination Point"
         android:inputType="textPersonName"
+        android:completionThreshold="1"
+        android:completionHint="Enter start point"
         android:textSize="18sp" />
 
     <Button
