@@ -2,6 +2,7 @@ package com.example.accidentzoneidentifier;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,6 +31,7 @@ public class Accident extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accident);
 
+
         address = findViewById(R.id.LocationET);
         state = findViewById(R.id.StreetET);
         zipcode = findViewById(R.id.zipcodeET);
@@ -42,6 +44,13 @@ public class Accident extends AppCompatActivity {
                 saveAccident(address.getText().toString(), state.getText().toString(), zipcode.getText().toString());
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
     }
 
 

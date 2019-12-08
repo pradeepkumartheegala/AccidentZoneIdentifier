@@ -6,6 +6,7 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 
 import androidx.fragment.app.FragmentActivity;
 
@@ -46,6 +47,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         myAddress = null;
         myAddress1 = null;
         TAG = "error";
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
     }
 
     @Override
