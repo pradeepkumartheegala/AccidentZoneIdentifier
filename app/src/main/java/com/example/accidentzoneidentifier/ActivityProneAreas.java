@@ -35,13 +35,6 @@ public class ActivityProneAreas extends AppCompatActivity {
     EditText st, dt;
     AutoCompleteTextView autoCompleteTextView;
     AutoCompleteTextView autoCompleteTextView1;
-
-    {
-        Toast.makeText(getApplicationContext(), "enter valid areas", Toast.LENGTH_SHORT).show();
-
-
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
