@@ -29,12 +29,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            android:label="@string/title_activity_maps">
-        </activity>
-
         <activity android:name=".ForgotPass" />
         <activity android:name=".ActivityProneAreas" />
         <activity android:name=".LoginWelcome" />
