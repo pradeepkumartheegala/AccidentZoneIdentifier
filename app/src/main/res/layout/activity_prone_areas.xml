@@ -26,11 +26,10 @@
         android:inputType="textPersonName"
         android:textSize="18sp" />
 
-    <AutoCompleteTextView
+    <TextView
         android:id="@+id/Destination"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:text="Destination"
         android:textSize="18sp" />
 

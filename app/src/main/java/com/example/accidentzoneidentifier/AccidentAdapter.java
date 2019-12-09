@@ -51,20 +51,20 @@ public class AccidentAdapter extends RecyclerView.Adapter<AccidentAdapter.Accide
         public AccidentViewHolder(@NonNull View itemView) {
             super(itemView);
             view = itemView;
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    listener.onItemClick(v, getAdapterPosition());
-                }
-            });
-
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    listener.onItemClick(v, getAdapterPosition());
-                    return true;
-                }
-            });
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    listener.onItemClick(v, getAdapterPosition());
+//                }
+//            });
+//
+//            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+//                @Override
+//                public boolean onLongClick(View v) {
+//                    listener.onItemClick(v, getAdapterPosition());
+//                    return true;
+//                }
+//            });
 
             address = itemView.findViewById(R.id.nameTV);
             stateTV = itemView.findViewById(R.id.startTV);

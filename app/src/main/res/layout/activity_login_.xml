@@ -10,6 +10,13 @@
     android:orientation="vertical"
     tools:context=".Login_Activity">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="18sp" />
+
     <EditText
         android:id="@+id/loginEmail"
         android:layout_width="match_parent"
@@ -18,13 +25,20 @@
         android:hint="E-mail ID"
         android:inputType="textPersonName" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="18sp" />
+
     <EditText
         android:id="@+id/loginPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:ems="10"
-        android:hint="Password"
-        android:inputType="textVisiblePassword" />
+        android:hint="Password" />
 
     <Button
         android:id="@+id/loginBTN"
@@ -36,7 +50,8 @@
         android:id="@+id/ForgotBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
+        android:layout_gravity="start"
+        android:layout_margin="5dp"
         android:text="ForgotPassword?"
         android:textColor="#3F51B5"
         android:textSize="18sp" />
@@ -45,7 +60,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="or"
+        android:layout_margin="5dp"
+        android:text="___________________or___________________"
         android:textSize="18sp" />
 
     <Button

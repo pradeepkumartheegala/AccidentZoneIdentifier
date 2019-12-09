@@ -105,9 +105,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        LatLng madrid = new LatLng(40.416775, -3.70379);
 //        mMap.addMarker(new MarkerOptions().position(madrid).title("Marker in Madrid"));
 
-        LatLng zaragoza = new LatLng(41.648823, -0.889085);
-
         //Define list to get all latlng for the route
+
         List<LatLng> path = new ArrayList();
 
 
@@ -162,7 +161,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //Draw the polyline
         if (path.size() > 0) {
-            PolylineOptions opts = new PolylineOptions().addAll(path).color(Color.BLUE).width(5);
+            PolylineOptions opts = new PolylineOptions().addAll(path).color(Color.GRAY).width(8);
             mMap.addPolyline(opts);
         }
 
