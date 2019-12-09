@@ -3,7 +3,7 @@ package com.example.accidentzoneidentifier;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModelProviders;
+
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
 //        setSupportActionBar(toolbar);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        return true;
+//    }
     public void loginBTN(View v){
         Intent b1= new Intent(this,Login_Activity.class);
         startActivity(b1);
