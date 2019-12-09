@@ -36,7 +36,10 @@
 
         <activity
             android:name=".MapsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
             android:label="@string/title_activity_maps"></activity>
+
         <activity android:name=".ForgotPass" />
         <activity android:name=".ActivityProneAreas" />
         <activity android:name=".LoginWelcome" />
@@ -46,6 +49,7 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".Login_Activity" />
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
