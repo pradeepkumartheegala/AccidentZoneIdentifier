@@ -19,13 +19,13 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Login_Activity extends AppCompatActivity {
 
-    EditText userName;
-    EditText userPwd;
-    FirebaseAuth firebaseAuth;
-    Button loginBTN, createBTN;
-    TextView forgotBTN;
+    //variables used to refer layout
+    private EditText userName,userPwd;
+    private Button loginBTN;
+    private TextView forgotTV, link_signupTV;
+    //Firebase authenticator
     private FirebaseAuth.AuthStateListener authStateListener;
-
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,6 @@ public class Login_Activity extends AppCompatActivity {
 
         userName = findViewById(R.id.loginEmail);
         userPwd = findViewById(R.id.loginPassword);
-        loginBTN = findViewById(R.id.loginBTN);
-        forgotBTN = findViewById(R.id.ForgotBTN);
         firebaseAuth = FirebaseAuth.getInstance();
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
@@ -53,6 +51,7 @@ public class Login_Activity extends AppCompatActivity {
             }
         };
 
+        loginBTN = findViewById(R.id.userLoginBTN);
         loginBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,27 +72,28 @@ public class Login_Activity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {
-                                Toast.makeText(Login_Activity.this, "Loginerror try again", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login_Activity.this, "Email already registered\nUse other email", Toast.LENGTH_SHORT).show();
                             } else {
                                 startActivity(new Intent(Login_Activity.this, LoginWelcome.class));
                             }
                         }
                     });
                } else {
-                    Toast.makeText(Login_Activity.this, "Error occured", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login_Activity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        forgotBTN.setOnClickListener(new View.OnClickListener() {
+        forgotTV = findViewById(R.id.forgotTV);
+        forgotTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Login_Activity.this, ForgotPass.class));
             }
         });
 
-        createBTN = findViewById(R.id.createBTN);
-        createBTN.setOnClickListener(new View.OnClickListener() {
+        link_signupTV = findViewById(R.id.link_signupTV);
+        link_signupTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Login_Activity.this, SignupActivity.class));
