@@ -2,6 +2,7 @@ package com.example.accidentzoneidentifier;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
@@ -60,6 +61,13 @@ public class ActivityProneAreas extends AppCompatActivity {
         autoCompleteTextView1.setAdapter(new PlaceAutoSuggestAdapter(ActivityProneAreas.this, android.R.layout.simple_list_item_1));
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.othermenu, menu);
+        return true;}
+
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
