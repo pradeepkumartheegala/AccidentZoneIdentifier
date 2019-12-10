@@ -45,7 +45,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     //gson to store arraylist to shared preference
     implementation 'com.google.code.gson:gson:2.8.6'
-
+    implementation 'com.google.android.material:material:1.0.0'
 
 
 }
