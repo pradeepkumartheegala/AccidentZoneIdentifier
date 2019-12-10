@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="#74B1E2"
+        android:background="@android:drawable/button_onoff_indicator_off"
         android:onClick="AccountBTN"
         android:text="Account" />
 
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="#74B1E2"
+        android:background="@android:drawable/button_onoff_indicator_off"
         android:onClick="dashboardBTN"
         android:text="Dashboard" />
 
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="#74B1E2"
+        android:background="@android:drawable/button_onoff_indicator_off"
         android:onClick="proneBTN"
         android:text="Accident Prone Area" />
 
@@ -47,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="#74B1E2"
+        android:background="@android:drawable/button_onoff_indicator_off"
         android:onClick="reportAccBTN"
         android:text="report accident" />
 
@@ -56,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="#74B1E2"
+        android:background="@android:drawable/button_onoff_indicator_off"
         android:onClick="logoutBTN"
         android:text="Logout" />
 
