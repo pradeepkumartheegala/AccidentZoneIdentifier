@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.accidentzoneidentifier.LoginWelcome">
+    <item
+        android:id="@+id/sett"
+        android:orderInCategory="100"
+        android:title="settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/aboutt"
+        android:orderInCategory="100"
+
+        android:title="Logout"
+        android:visible="true"
+        app:showAsAction="always" />
+
+</menu>
