@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,6 +57,7 @@ public class Login_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
                 String emailid = userName.getText().toString();
                 String passwd = userPwd.getText().toString();
 
@@ -68,12 +70,17 @@ public class Login_Activity extends AppCompatActivity {
                 } else if (emailid.isEmpty() && passwd.isEmpty()) {
                     Toast.makeText(Login_Activity.this, "fields are empty", Toast.LENGTH_SHORT).show();
                 } else if (!(emailid.isEmpty() && passwd.isEmpty())) {
+                    final ProgressBar progressBar=findViewById(R.id.progressBar);
+                    progressBar.setVisibility(View.VISIBLE);
                     firebaseAuth.signInWithEmailAndPassword(emailid, passwd).addOnCompleteListener(Login_Activity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {
+                                progressBar.setVisibility(View.GONE);
+
                                 Toast.makeText(Login_Activity.this, "Email already registered\nUse other email", Toast.LENGTH_SHORT).show();
                             } else {
+
                                 startActivity(new Intent(Login_Activity.this, LoginWelcome.class));
                             }
                         }
