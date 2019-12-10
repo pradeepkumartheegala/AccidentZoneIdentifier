@@ -43,11 +43,7 @@ dependencies {
     implementation 'com.google.android.libraries.places:places:2.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    //gson to store arraylist to shared preference
-    implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.google.android.material:material:1.0.0'
-
-
 }
 
 // Add to the bottom of the file
