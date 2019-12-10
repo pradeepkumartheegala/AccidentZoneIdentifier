@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -72,14 +73,19 @@ public class SignupActivity extends AppCompatActivity {
                 } else if (emailid.isEmpty() && passwd.isEmpty()) {
                     Toast.makeText(SignupActivity.this, "fields are empty", Toast.LENGTH_SHORT).show();
 
+                }else if(passwd.length()<6){
+                    Toast.makeText(SignupActivity.this, "Password lenght should be more 6", Toast.LENGTH_SHORT).show();
                 } else if (!(emailid.isEmpty() && passwd.isEmpty())) {
-                    if (pwd.equals(confirmpwd)) {
+
+                    if (passwd.equals(confirmpwd.getText().toString())) {
                         mFirebaseAuth.createUserWithEmailAndPassword(emailid, passwd).addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (!task.isSuccessful()) {
-                                    Toast.makeText(SignupActivity.this, "Fields are empty try again", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignupActivity.this, "Email id aleady exists\nuse another one to create an account", Toast.LENGTH_SHORT).show();
                                 } else {
+                                    final ProgressBar progressBar = findViewById(R.id.progressBar2);
+                                    progressBar.setVisibility(View.VISIBLE);
                                     //getting the values from the edittext to store the values
                                     String name = nameET.getText().toString();
                                     String password = pwd.getText().toString();
@@ -93,8 +99,7 @@ public class SignupActivity extends AppCompatActivity {
                                     UserData userData = new UserData(name, emailid, password, addr, phone);
                                     databaseReference.setValue(userData);
                                     Toast.makeText(getApplicationContext(), "Account Created", Toast.LENGTH_SHORT).show();
-                                    Intent b1 = new Intent(SignupActivity.this, Login_Activity.class);
-                                    startActivity(b1);
+
                                     FirebaseAuth auth = FirebaseAuth.getInstance();
                                     FirebaseUser user = auth.getCurrentUser();
 
@@ -107,6 +112,10 @@ public class SignupActivity extends AppCompatActivity {
                                                     }
                                                 }
                                             });
+                                    progressBar.setVisibility(View.GONE);
+                                    Intent b1 = new Intent(SignupActivity.this, Login_Activity.class);
+                                    startActivity(b1);
+
                                 }
                             }
                         });

@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Login_Activity extends AppCompatActivity {
 
     //variables used to refer layout
-    private EditText userName,userPwd;
+    private EditText userName, userPwd;
     private Button loginBTN;
     private TextView forgotTV, link_signupTV;
     //Firebase authenticator
@@ -70,7 +70,7 @@ public class Login_Activity extends AppCompatActivity {
                 } else if (emailid.isEmpty() && passwd.isEmpty()) {
                     Toast.makeText(Login_Activity.this, "fields are empty", Toast.LENGTH_SHORT).show();
                 } else if (!(emailid.isEmpty() && passwd.isEmpty())) {
-                    final ProgressBar progressBar=findViewById(R.id.progressBar);
+                    final ProgressBar progressBar = findViewById(R.id.progressBar);
                     progressBar.setVisibility(View.VISIBLE);
                     firebaseAuth.signInWithEmailAndPassword(emailid, passwd).addOnCompleteListener(Login_Activity.this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -78,14 +78,17 @@ public class Login_Activity extends AppCompatActivity {
                             if (!task.isSuccessful()) {
                                 progressBar.setVisibility(View.GONE);
 
-                                Toast.makeText(Login_Activity.this, "Email already registered\nUse other email", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login_Activity.this, "Failed to login", Toast.LENGTH_SHORT).show();
                             } else {
 
                                 startActivity(new Intent(Login_Activity.this, LoginWelcome.class));
                             }
+
                         }
                     });
-               } else {
+                    progressBar.setVisibility(View.GONE);
+
+                } else {
                     Toast.makeText(Login_Activity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                 }
             }
